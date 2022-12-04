@@ -1,0 +1,9 @@
+---
+EUPodR1:
+    interfaces:
+        -   interface: gigabitEthernet 0/0/1
+
+EUPodR2:
+    interfaces:
+        -   interface: gigabitEthernet 0/0/1
+        
