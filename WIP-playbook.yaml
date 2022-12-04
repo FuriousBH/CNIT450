@@ -1,13 +1,13 @@
 ---
 - name: eigrp test
-  hosts: router5
+  hosts: a
   gather_facts: false
   connection: network_cli
   vars_files:
-    - ./WIP-vars.yaml
+    - ./AddDevicesVars.yaml
 
   tasks:
     - name: eigrp config
       ios_config:
-        src: "WIP.j2"
+        src: "AddDevices.j2"
         
