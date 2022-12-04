@@ -31,7 +31,7 @@
 {% endif %}
 
 {# EUPodR6 #}
-{% if ansible_host == '10.22.151.2' %}
+{% if ansible_host == '10.22.152.2' %}
   ipv6 unicast-routing
   router eigrp EUROPE
     address-family ipv4 unicast autonomous-system 1
@@ -54,7 +54,7 @@
 {#------------------------MLS------------------------------ #}
 
 {# EUPodMLS3 #}
-{% if ansible_host == '10.22.151.2' %}
+{% if ansible_host == '10.22.153.2' %}
   ipv6 unicast-routing
   router eigrp EUROPE
     address-family ipv4 unicast autonomous-system 1
@@ -75,7 +75,7 @@
 {% endif %}
 
 {# EUPodMLS4 #}
-{% if ansible_host == '10.22.151.2' %}
+{% if ansible_host == '10.22.154.2' %}
   ipv6 unicast-routing
   router eigrp EUROPE
     address-family ipv4 unicast autonomous-system 1
