@@ -1,13 +1,13 @@
 ---
-- name: eigrp test
-  hosts: a
+- name: Add Pod
+  hosts: addDevices
   gather_facts: false
   connection: network_cli
   vars_files:
-    - ./AddDevicesVars.yaml
+    - ./addDevicesVars.yaml
 
   tasks:
-    - name: eigrp config
+    - name: Configuring Devices
       ios_config:
-        src: "AddDevices.j2"
+        src: "addDevices.j2"
         
