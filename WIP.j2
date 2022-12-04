@@ -20,6 +20,7 @@
     exit-address-family
   address-family ipv6 unicast autonomous-system 1
     eigrp router-id {{ EUPodR5.eigrp.rid }}
+    exit-address-family
   {% for item in EUPodR5.interfaces %}
     interface {{ item.interface }}
     ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
@@ -40,6 +41,7 @@
     exit-address-family
   address-family ipv6 unicast autonomous-system 1
     eigrp router-id {{ EUPodR6.eigrp.rid }}
+    exit-address-family
   {% for item in EUPodR6.interfaces %}
     interface {{ item.interface }}
     ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
@@ -62,6 +64,7 @@
     exit-address-family
   address-family ipv6 unicast autonomous-system 1
     eigrp router-id {{ EUPodMLS3.eigrp.rid }}
+    exit-address-family
   {% for item in EUPodMLS3.interfaces %}
     interface {{ item.interface }}
     ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
@@ -82,6 +85,7 @@
     exit-address-family
   address-family ipv6 unicast autonomous-system 1
     eigrp router-id {{ EUPodMLS4.eigrp.rid }}
+    exit-address-family
   {% for item in EUPodMLS4.interfaces %}
     interface {{ item.interface }}
     ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
