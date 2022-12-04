@@ -1,1 +1,12 @@
+---
+- name: Swap Protocols
+  hosts: swapProtocols
+  gather_facts: false
+  connection: network_cli
+  vars_files:
+    - ./EIGRPtoOSPFvars.yaml
 
+  tasks:
+    - name: Changing EIGRP to OSPF
+      ios_config:
+        src: "EIGRPtoOSPF.j2"
