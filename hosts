@@ -1,8 +1,11 @@
-[router5]
-EUPodR5 ansible_host=10.22.151.2
+[addDevices]
 EUPodR4 ansible_host=10.22.191.1
+EUPodR5 ansible_host=10.22.151.2
+EUPodR6 ansible_host=10.22.152.2
+EUPodMLS3 ansible_host=10.22.153.2
+EUPodMLS4 ansible_host=10.22.154.2
 
-[router5:vars]
+[addDevices:vars]
 ansible_connection=network_cli
 ansible_user=admin
 ansible_password=enterprise
@@ -12,3 +15,4 @@ ansible_python_interpreter=/usr/bin/python3
 ansible_become=yes
 ansible_become_method=enable
 ansible_become_pass=enterprise
+
