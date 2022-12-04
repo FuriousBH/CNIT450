@@ -2,32 +2,91 @@
 
 {# EUPodR4 #}
 {% if ansible_host == '10.22.191.1' %}
-interface {{ EUPodR4.interface }}
-ip address {{ EUPodR4.ipv4 }} {{ EUPodR4.ipv4Mask }}
+  {% for item in EUPodR4.interfaces %}
+    interface {{ item.interface }}
+    ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
+    no shut
+  {% endfor %}
 {% endif %}
 
 {# EUPodR5 #}
 {% if ansible_host == '10.22.151.2' %}
-interface {{ EUPodR5.interface }}
-ip address {{ EUPodR5.ipv4 }} {{ EUPodR5.ipv4Mask }}
+  ipv6 unicast-routing
+  router eigrp EUROPE
+    address-family ipv4 unicast autonomous-system 1
+    network 10.0.0.0
+    network 192.168.0.0
+    eigrp router-id {{ EUPodR5.eigrp.rid }}
+    exit-address-family
+  address-family ipv6 unicast autonomous-system 1
+    eigrp router-id {{ EUPodR5.eigrp.rid }}
+  {% for item in EUPodR5.interfaces %}
+    interface {{ item.interface }}
+    ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
+    no shut
+    ipv6 address {{ item.ipv6 }}
+    ipv6 eigrp 1
+  {% endfor %}
 {% endif %}
 
 {# EUPodR6 #}
-{% if ansible_host == '10.22.152.2' %}
-interface {{ EUPodR6.interface }}
-ip address {{ EUPodR6.ipv4 }} {{ EUPodR6.ipv4Mask }}
+{% if ansible_host == '10.22.151.2' %}
+  ipv6 unicast-routing
+  router eigrp EUROPE
+    address-family ipv4 unicast autonomous-system 1
+    network 10.0.0.0
+    network 192.168.0.0
+    eigrp router-id {{ EUPodR6.eigrp.rid }}
+    exit-address-family
+  address-family ipv6 unicast autonomous-system 1
+    eigrp router-id {{ EUPodR6.eigrp.rid }}
+  {% for item in EUPodR6.interfaces %}
+    interface {{ item.interface }}
+    ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
+    no shut
+    ipv6 address {{ item.ipv6 }}
+    ipv6 eigrp 1
+  {% endfor %}
 {% endif %}
 
 {#------------------------MLS------------------------------ #}
 
 {# EUPodMLS3 #}
 {% if ansible_host == '10.22.151.2' %}
-interface {{ EUPodR5.interface }}
-ip address {{ EUPodR5.ipv4 }} {{ EUPodR5.ipv4Mask }}
+  ipv6 unicast-routing
+  router eigrp EUROPE
+    address-family ipv4 unicast autonomous-system 1
+    network 10.0.0.0
+    network 192.168.0.0
+    eigrp router-id {{ EUPodMLS3.eigrp.rid }}
+    exit-address-family
+  address-family ipv6 unicast autonomous-system 1
+    eigrp router-id {{ EUPodMLS3.eigrp.rid }}
+  {% for item in EUPodMLS3.interfaces %}
+    interface {{ item.interface }}
+    ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
+    no shut
+    ipv6 address {{ item.ipv6 }}
+    ipv6 eigrp 1
+  {% endfor %}
 {% endif %}
 
 {# EUPodMLS4 #}
 {% if ansible_host == '10.22.151.2' %}
-interface {{ EUPodR5.interface }}
-ip address {{ EUPodR5.ipv4 }} {{ EUPodR5.ipv4Mask }}
+  ipv6 unicast-routing
+  router eigrp EUROPE
+    address-family ipv4 unicast autonomous-system 1
+    network 10.0.0.0
+    network 192.168.0.0
+    eigrp router-id {{ EUPodMLS4.eigrp.rid }}
+    exit-address-family
+  address-family ipv6 unicast autonomous-system 1
+    eigrp router-id {{ EUPodMLS4.eigrp.rid }}
+  {% for item in EUPodMLS4.interfaces %}
+    interface {{ item.interface }}
+    ip address {{ item.ipv4 }} {{ item.ipv4Mask }}
+    no shut
+    ipv6 address {{ item.ipv6 }}
+    ipv6 eigrp 1
+  {% endfor %}
 {% endif %}
