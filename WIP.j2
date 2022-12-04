@@ -1,0 +1,9 @@
+{% if ansible_host == '10.22.191.1' %}
+interface {{ EUPodR4.interface }}
+ip address {{ EUPodR4.ipv4 }} {{ EUPodR4.ipv4Mask }}
+{% endif %}
+
+{% if ansible_host == '10.22.151.2' %}
+interface {{ EUPodR5.interface }}
+ip address {{ EUPodR5.ipv4 }} {{ EUPodR5.ipv4Mask }}
+{% endif %}
