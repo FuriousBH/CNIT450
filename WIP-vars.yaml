@@ -1,11 +1,49 @@
 ---
--  EUPodR5:
-    interface: loopback0
-    ipv4: 192.168.123.1
-    ipv4Mask: 255.255.255.0
-
--  EUPodR4:
-    interface: loopback0
-    ipv4: 192.168.124.2
-    ipv4Mask: 255.255.255.0
+EUPodR4:
+    interfaces:
+        interface: loopback0
+        ipv4: 192.168.124.1
+        ipv4Mask: 255.255.255.0
+        ipv6: 2001:DB8::FF00:0:224:1/112
+       
+EUPodR5:
+    interfaces:
+        interface: loopback0
+        ipv4: 192.168.125.1
+        ipv4Mask: 255.255.255.0
+        ipv6: 2001:DB8::FF00:0:225:1/112
+        
+    eigrp:
+        rid: 20.20.20.20
+        
+ EUPodR6:
+    interfaces:
+        interface: loopback0
+        ipv4: 192.168.126.1
+        ipv4Mask: 255.255.255.0
+        ipv6: 2001:DB8::FF00:0:226:1/112
+        
+    eigrp:
+        rid: 21.21.21.21
+        
+ EUPodMLS3:
+    interfaces:
+        interface: loopback0
+        ipv4: 192.168.127.1
+        ipv4Mask: 255.255.255.0
+        ipv6: 2001:DB8::FF00:0:227:1/112
+        
+    eigrp:
+        rid: 22.22.22.22
+        
+ EUPodMLS4:
+    interfaces:
+        interface: loopback0
+        ipv4: 192.168.128.1
+        ipv4Mask: 255.255.255.0
+        ipv6: 2001:DB8::FF00:0:228:1/112
+        
+    eigrp:
+        rid: 23.23.23.23
+       
     
