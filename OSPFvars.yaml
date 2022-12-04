@@ -7,3 +7,19 @@ EUPodR2:
     interfaces:
         -   interface: gigabitEthernet 0/0/1
         
+EUPodR3:
+    interfaces:
+        -   interface: gigabitEthernet 1/0/1
+        -   interface: serial 0/1/0
+      
+EUPodR4:
+    interfaces:
+        -   interface: gigabitEthernet 0/1 
+        -   interface: serial 0/1/0
+      
+      
+      
+      
+      
+      
+      
