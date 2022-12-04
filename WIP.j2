@@ -1,8 +1,32 @@
+{#----------------------ROUTERS---------------------------- #}
+
+{# EUPodR4 #}
 {% if ansible_host == '10.22.191.1' %}
 interface {{ EUPodR4.interface }}
 ip address {{ EUPodR4.ipv4 }} {{ EUPodR4.ipv4Mask }}
 {% endif %}
 
+{# EUPodR5 #}
+{% if ansible_host == '10.22.151.2' %}
+interface {{ EUPodR5.interface }}
+ip address {{ EUPodR5.ipv4 }} {{ EUPodR5.ipv4Mask }}
+{% endif %}
+
+{# EUPodR6 #}
+{% if ansible_host == '10.22.152.2' %}
+interface {{ EUPodR6.interface }}
+ip address {{ EUPodR6.ipv4 }} {{ EUPodR6.ipv4Mask }}
+{% endif %}
+
+{#------------------------MLS------------------------------ #}
+
+{# EUPodMLS3 #}
+{% if ansible_host == '10.22.151.2' %}
+interface {{ EUPodR5.interface }}
+ip address {{ EUPodR5.ipv4 }} {{ EUPodR5.ipv4Mask }}
+{% endif %}
+
+{# EUPodMLS4 #}
 {% if ansible_host == '10.22.151.2' %}
 interface {{ EUPodR5.interface }}
 ip address {{ EUPodR5.ipv4 }} {{ EUPodR5.ipv4Mask }}
