@@ -1,11 +1,89 @@
 {# EUPodR1 #}
 {% if ansible_host == '10.22.188.1' %}
-  router ospf 1
-    network 10.0.0.0 0.0.0.255 area 1
-    exit
-  ipv6 router ospf 1
-    exit
-  interface {{ EUPodR1.interfaces.interface }}
-    ip ospf 1 area 1
-    ipv6 ospf 1 area 1
+    router ospf 1
+        router-id {{ EUPodR1.ospf.rid }}
+        network 10.0.0.0 0.255.255.255 area 0
+        exit
+    ipv6 router ospf 1
+        exit
+  {% for item in EUPodR1.interfaces %}
+    interface {{ item.interface }}
+        ipv6 ospf 1 area 0
+        exit
+  {% endfor %}
+{% endif %}
+
+{# EUPodR2 #}
+{% if ansible_host == '10.22.189.1' %}
+    router ospf 1
+        router-id {{ EUPodR2.ospf.rid }}
+        network 10.0.0.0 0.255.255.255 area 0
+        exit
+    ipv6 router ospf 1
+        exit
+  {% for item in EUPodR2.interfaces %}
+    interface {{ item.interface }}
+        ipv6 ospf 1 area 0
+        exit
+  {% endfor %}
+{% endif %}
+
+{# EUPodR3 #}
+{% if ansible_host == '10.22.190.1' %}
+    router ospf 1
+        router-id {{ EUPodR3.ospf.rid }}
+        network 10.0.0.0 0.255.255.255 area 0
+        exit
+    ipv6 router ospf 1
+        exit
+  {% for item in EUPodR3.interfaces %}
+    interface {{ item.interface }}
+        ipv6 ospf 1 area 0
+        exit
+  {% endfor %}
+{% endif %}
+
+{# EUPodR4 #}
+{% if ansible_host == '10.22.191.1' %}
+    router ospf 1
+        router-id {{ EUPodR4.ospf.rid }}
+        network 10.0.0.0 0.255.255.255 area 0
+        exit
+    ipv6 router ospf 1
+        exit
+  {% for item in EUPodR4.interfaces %}
+    interface {{ item.interface }}
+        ipv6 ospf 1 area 0
+        exit
+  {% endfor %}
+{% endif %}
+
+{# EUPodMLS1 #}
+{% if ansible_host == '10.22.136.1' %}
+    router ospf 1
+        router-id {{ EUPodMLS1.ospf.rid }}
+        network 10.0.0.0 0.255.255.255 area 0
+        exit
+    ipv6 router ospf 1
+        exit
+  {% for item in EUPodMLS1.interfaces %}
+    interface {{ item.interface }}
+        ipv6 ospf 1 area 0
+        exit
+  {% endfor %}
+{% endif %}
+
+{# EUPodMLS2 #}
+{% if ansible_host == '10.22.136.2' %}
+    router ospf 1
+        router-id {{ EUPodMLS2.ospf.rid }}
+        network 10.0.0.0 0.255.255.255 area 0
+        exit
+    ipv6 router ospf 1
+        exit
+  {% for item in EUPodMLS2.interfaces %}
+    interface {{ item.interface }}
+        ipv6 ospf 1 area 0
+        exit
+  {% endfor %}
 {% endif %}
