@@ -1,24 +1,62 @@
 ---
 EUPodR1:
-    interfaces:
-        -   interface: gigabitEthernet 0/0/1
+  interfaces:
+    - interface: gigabitEthernet 0/0/1   
+  ospf:
+    rid: 1.1.1.1
 
 EUPodR2:
-    interfaces:
-        -   interface: gigabitEthernet 0/0/1
-        
+  interfaces:
+    - interface: gigabitEthernet 0/0/1 
+  ospf:
+    rid: 2.2.2.2
+
 EUPodR3:
-    interfaces:
-        -   interface: gigabitEthernet 1/0/1
-        -   interface: serial 0/1/0
-      
+  interfaces:
+    - interface: gigabitEthernet 0/0/1
+    - interface: serial 0/1/0
+  ospf:
+    rid: 3.3.3.3
+
 EUPodR4:
-    interfaces:
-        -   interface: gigabitEthernet 0/1 
-        -   interface: serial 0/1/0
-      
-      
-      
+  interfaces:
+    - interface: serial 0/1/0
+    - interface: gigabitEthernet 0/0
+  ospf:
+    rid: 4.4.4.4
+
+EUPodMLS1:
+  interfaces:
+    - interface: gigabitEthernet 1/0/1
+    - interface: gigabitEthernet 1/0/21
+    - interface: gigabitEthernet 1/0/23
+    - interface: vlan 129
+    - interface: vlan 130
+    - interface: vlan 131
+    - interface: vlan 132
+    - interface: vlan 133
+    - interface: vlan 134
+    - interface: vlan 135
+
+  ospf:
+    rid: 5.5.5.5
+
+EUPodMLS2:
+  interfaces:
+    - interface: gigabitEthernet 1/0/1
+    - interface: gigabitEthernet 1/0/21
+    - interface: gigabitEthernet 1/0/23
+    - interface: vlan 129
+    - interface: vlan 130
+    - interface: vlan 131
+    - interface: vlan 132
+    - interface: vlan 133
+    - interface: vlan 134
+    - interface: vlan 135
+
+  ospf:
+    rid: 6.6.6.6
+
       
       
       
